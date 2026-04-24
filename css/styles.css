@@ -1,0 +1,178 @@
+
+/* ==========================================================================
+Reset y configuración base
+========================================================================== */
+
+/* TODO: Implementa un reset básico */
+/* Remueve márgenes y padding predeterminados */
+* {
+    box-sizing: border-box;
+}
+
+/* TODO: Configura el html */
+/* font-size debe ser 100% para accesibilidad */
+html {
+    font-size: 100%;
+
+}
+
+/* TODO: Estilos base del body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+
+
+}
+
+/* ==========================================================================
+    Variables y utilidades
+========================================================================== */
+/* TODO: Define variables usando HSL */
+:root {
+/* Color primario base usando HSL */
+    --color-primario: hsl(196, 69%, 80%);
+
+/* Variación clara del color primario */
+    --color--azulclaro:hsl(196, 69%, 75%);
+
+/* Variación oscura del color primario */
+    --color-azuloscuro:hsl(195, 67%, 26%);
+/* Usa el mismo Hue pero reduce Lightness */
+
+    /* Colores de texto y fondo esta en el body*/
+
+    --color--texto: hsl(190, 46%, 5%);
+    --color--fondo-color: hsla(196, 69% ,44%);
+/* Espaciado */
+    --espaciado-xs: 0.25rem;
+    --espaciado-sm: 0.5rem;
+    --espaciado-md: 1rem;
+    --espaciado-lg: 2rem;
+    --espaciado-xl: 4rem;
+
+}
+
+/* ==========================================================================
+    Tipografía
+========================================================================== */
+
+/* TODO: Estiliza el header usando Flexbox */
+.header {
+    background-color:var(--color--fondo-color);
+    padding: 0 1rem;
+    display: flexbox;
+    box-shadow: 0 10px 25px hsl(194, 74%, 63%);
+}
+
+.header-contenido {
+    max-width: 75rem ;
+    margin: auto auto;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.titulo-principal {
+    font-size:2.5rem;
+    margin-bottom:1rem;
+    color:var(--color-primario);
+}
+
+.descripcion {
+    font-size:1.5rem;
+    color:var(--color--azulclaro)
+}
+
+/* ==========================================================================
+    Layout
+   ========================================================================== */
+
+    /* TODO: Implementa Grid para la galería */
+.contenedor {
+    max-width:75rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:2rem;
+}
+
+/* ==========================================================================
+    Componentes
+   ========================================================================== */
+.foto-tarjeta{
+    background-color: hsl(200, 84%, 34%);
+    border-radius:20px ;
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition:5s;
+}
+
+.foto-tarjeta:hover{
+    transform: translateY(30px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background-color: dodgerblue;
+}
+
+.foto-tarjeta img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.foto-info {
+    padding:1rem;
+}
+
+.foto-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color:hsl(178, 39%, 62%);
+    text-align: center;
+}
+
+.foto-descripcion {
+    font-size:1.0rem;
+    color:hsl(180, 36%, 71%);
+    margin: 0;
+    text-align: center;
+}
+
+/* TODO: Estiliza el footer */
+.footer {
+    background-color:var(--color-azuloscuro);
+    color:var(--color--azulclaro);
+    text-align: center;
+    padding:1rem;
+    margin-top:1.5 rem;
+}
+
+/* TODO: Tablets - 2 columnas */
+    @media (max-width: 768px) {
+    .galeria {
+    grid-template-columns: repeat(2,1fr);
+    }
+    
+    .titulo-principal {
+        font-size: 1rem;
+    }
+    }
+
+    /* TODO: Móviles - 1 columna */
+    @media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: repeat(1,1fr);   
+    }
+    
+    .titulo-principal {
+        font-size: 1rem;
+    }
+    
+    .contenedor {
+        padding: 0.5rem;   
+    }
+    }
